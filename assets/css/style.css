@@ -1,0 +1,22 @@
+.main-container {
+    width: 980px;
+    background: turquoise;
+}
+h1 {
+    clear: both;
+    width: 100px;
+    background: orangered;
+    color: aliceblue;
+    height: 40px;
+}
+.card {
+    width: 700px;
+    height: 500px;
+    background: wheat;
+}
+p { 
+color: green;
+}
+.raw {
+    width: 380px;
+}
