@@ -3,18 +3,73 @@
 // * The random number shown at the start of the game should be between 19 - 120.
 
 // * Each crystal should have a random hidden value between 1 - 12.
+//first I need to start the document//
+var wins = 0;
+    var losses =0;
+    
+    var compChoice = [];
+    var userTotalScore =[];
+    var Crystal = {
+        "Color": "blue", 
+        "Color": "green", 
+        "Color": "red", 
+        "Color": "yellow",
+        "pointsvalue ": 0,
+    
+    };
+$(document).ready(function() {
+    $("#number-to-guess").text(compChoice);
+   randomNum(19, 120); 
+    compChoice = randomNum([Math.floor(Math.random() * (max - min + 1)) + min]);
+     
+    $("#win-counter").html(wins);
+    $("#loss-counter").html(losses);
+    
+    $("#total-score").text(userTotalScore);
+    
+   
+    // var counter= 0;
+    $("#total-score").text(userTotalScore);
 
-var totalScore = 0;
-var wins = 0; 
-var losses= 0;
-
-$(document).ready(function(){
-    var rundomNum = Math.floor(Math.random( )*101 +19)
+    Crystal.poinstvalue = randomNum(1, 12);
+    alert("Your total score is" + Crystal.poinstvalue;
  
-$()
-})
+    $("#blue").on("click", function (){
+     Crystal.poinstvalue += Crystal.pointsvalue;
+
+    });
+    $("##green").on("click", function (){
+     Crystal.poinstvalue += Crystal.pointsvalue;
+    });
+    $("#red").on("click", function (){
+    Crystal.poinstvalue += Crystal.pointsvalue;
+    });
+     $("#yellow").on("click", function (){
+     Crystal.poinstvalue += Crystal.pointsvalue;
+     });
+
+                      
 
 
+
+
+      if (counter === compChoice) {
+        alert("You win!");
+    } else if(counter >= compChoice) {
+        alert("You lost!");
+    }
+    })
+    })
+    
+
+// Math Random function between 19-120
+
+
+// UserChoice = Sum of the Crystal Values
+
+// Crystal Values = Random Number 
+// Math Random function between **
+    
 
 //     $('#randomNumber').text(Random);
 //     // Appending random number to the randomNumber id in the html doc
