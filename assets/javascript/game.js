@@ -11,7 +11,7 @@ var startGame = function () {
 
 	var images = ["./assets/images/yellow.png", "./assets/images/green.png", "./assets/images/blue.png","./assets/images/red.png"];
 		
-	compRun = Math.floor(Math.random() * 69 ) + 30; 
+	compRun = Math.floor(Math.random() * 101 ) + 19; 
 
 
 	$("#comp-choice").html('Random Result: ' + compRun);
