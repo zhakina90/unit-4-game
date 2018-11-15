@@ -11,21 +11,10 @@ h1 {
 .card {
     width: 500px;
     height: 380px;
-    background: wheat;
+    background: lightgreen;
 }
  p { 
 color: green;
 }  
-.raw {
-    width: 380px;
-} 
-.crystals{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.crystal {
-    border: 1px solid purple;
-    width: 280px;
-    height: 180px;
-}
+
+
