@@ -1,65 +1,109 @@
 
-
 // * The random number shown at the start of the game should be between 19 - 120.
 
 // * Each crystal should have a random hidden value between 1 - 12.
 //first I need to start the document//
-var wins = 0;
-    var losses =0;
-    
+    var wins= 0;
+    var losses = 0;
+    var randResult = 0;
     var compChoice = [];
-    var userTotalScore =[];
-    var Crystal = {
-        "Color": "blue", 
-        "Color": "green", 
-        "Color": "red", 
-        "Color": "yellow",
-        "pointsvalue ": 0,
+    var previous= 0;
+    // var userTotalScore =[];
+    // $(".crystals").attr("class", "red");
     
-    };
-$(document).ready(function() {
-    $("#number-to-guess").text(compChoice);
-   randomNum(19, 120); 
-    compChoice = randomNum([Math.floor(Math.random() * (max - min + 1)) + min]);
+   var game = function (){
+    $(".crystals").empty ();
+   randomNum = Math.floor(Math.random() * 101) + 19;
+    
+   $("#number-to-guess").html("Number to guess:" + randomNum);
+    
+//    console.log(randomNum);
+    for (var i = 0; i < 4; i++) {
+        var random = Math.floor(Math.random() * 11) +1;
+        // console.log(random);
+
+        var crystal = $("<div>");
+        crystal.attr({
+            "class": 'crystal',
+            "data-random": random 
+        });
+        $(".crystals").append(crystal);
+    }
+    }
+    game();
+
+    $(document).on("click", ".crystals", function (){
+      
+        var num = parsenInt($(this).attr("data-random"));
+        
+        previous += num;
+        if (previous > randomNum){
+            lossses--;
+            alert("You Lost!");
+            $("#loss-counter").html(losses);
+            previous = 0;
+            game();
+        } else if (previous === randomNum);
+        wins++;
+        alert("You Won!");
+        $("#win-counter").html(wins);
+        previous = 0;
+        game();
+
+
+    });
+
+//     var Crystal = {
+//         "Color": "blue", 
+//         "Color": "green", 
+//         "Color": "red", 
+//         "Color": "yellow",
+//         "pointsvalue ": 0,
+    
+//     };
+// $(document).ready(function() {
+//     $("#number-to-guess").text(compChoice);
+//    randomNum(19, 120); 
+//     compChoice = randomNum([Math.floor(Math.random() * (max - min + 1)) + min]);
      
-    $("#win-counter").html(wins);
-    $("#loss-counter").html(losses);
+//     $("#win-counter").html(wins);
+//     $("#loss-counter").html(losses);
     
-    $("#total-score").text(userTotalScore);
+//     $("#total-score").text(userTotalScore);
     
    
-    // var counter= 0;
-    $("#total-score").text(userTotalScore);
+//     // var counter= 0;
+//     $("#total-score").text(userTotalScore);
 
-    Crystal.poinstvalue = randomNum(1, 12);
-    alert("Your total score is" + Crystal.poinstvalue;
+//     Crystal.poinstvalue = randomNum(1, 12);
+//     alert("Your total score is" + Crystal.poinstvalue;
  
-    $("#blue").on("click", function (){
-     Crystal.poinstvalue += Crystal.pointsvalue;
+//     $("#blue").on("click", function (){
+//      Crystal.poinstvalue += Crystal.pointsvalue;
 
-    });
-    $("##green").on("click", function (){
-     Crystal.poinstvalue += Crystal.pointsvalue;
-    });
-    $("#red").on("click", function (){
-    Crystal.poinstvalue += Crystal.pointsvalue;
-    });
-     $("#yellow").on("click", function (){
-     Crystal.poinstvalue += Crystal.pointsvalue;
-     });
+//     });
+//     $("##green").on("click", function (){
+//      Crystal.poinstvalue += Crystal.pointsvalue;
+//     });
+//     $("#red").on("click", function (){
+//     Crystal.poinstvalue += Crystal.pointsvalue;
+//     });
+//      $("#yellow").on("click", function (){
+//      Crystal.poinstvalue += Crystal.pointsvalue;
+//      });
 
                       
 
 
 
 
-      if (counter === compChoice) {
-        alert("You win!");
-    } else if(counter >= compChoice) {
-        alert("You lost!");
-    }
-    })
-    })
+//       if (counter === compChoice) {
+//         alert("You win!");
+//     } else if(counter >= compChoice) {
+//         alert("You lost!");
+//     }
+//     })
+//     })
     
 
 // Math Random function between 19-120

@@ -1,22 +1,31 @@
-.main-container {
+body {
     width: 980px;
     background: turquoise;
 }
 h1 {
-    clear: both;
-    width: 100px;
+    width: 40%;
     background: orangered;
     color: aliceblue;
-    height: 40px;
+    height: 50px;
 }
 .card {
-    width: 700px;
-    height: 500px;
+    width: 500px;
+    height: 380px;
     background: wheat;
 }
-p { 
+ p { 
 color: green;
-}
+}  
 .raw {
     width: 380px;
+} 
+.crystals{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.crystal {
+    border: 1px solid purple;
+    width: 280px;
+    height: 180px;
 }
